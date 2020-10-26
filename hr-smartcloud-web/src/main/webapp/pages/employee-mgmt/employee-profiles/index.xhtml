@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:of="http://omnifaces.org/ui">
+<ui:composition template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="contents">	
+	<h:form id="frmEmployeeProfiles">
+	<p:autoUpdate />
+	<p:panelGrid columns="2" style="margin:auto;" styleClass="shaddow">
+		<f:facet name="header">Employee Profiles Form</f:facet>
+
+	<p:outputLabel value="Number" for="number"/>	
+	<p:inputText type="number" value="#{mbEmployeeProfiles.model.number}" id="number"  placeholder="Number" />
+
+	<p:outputLabel value="First Name" for="firstName"/>	
+	<p:inputText type="text" value="#{mbEmployeeProfiles.model.firstName}" id="firstName"  placeholder="FirstName" />
+
+	<p:outputLabel value="Last Name" for="lastName"/>	
+	<p:inputText type="text" value="#{mbEmployeeProfiles.model.lastName}" id="lastName"  placeholder="LastName" />
+
+	<p:outputLabel value="Email" for="email"/>	
+	<p:inputText type="email" value="#{mbEmployeeProfiles.model.email}" id="email"  placeholder="Email" />
+
+	<p:outputLabel value="Job Title" for="jobTitle"/>	
+	<p:selectOneMenu value="#{mbEmployeeProfiles.model.jobTitle}" id="jobTitle" disabled="false" converter="omnifaces.SelectItemsConverter">
+	  <f:selectItem itemLabel="" itemValue="#{null}"  />
+	  <f:selectItems value="#{mbJobTitle.modelList}" var="ref" itemLabel="#{ref.name}" itemValue="#{ref}"  />
+	</p:selectOneMenu>	
+
+	<p:outputLabel value="Dgree" for="dgree"/>	
+	<p:selectOneMenu value="#{mbEmployeeProfiles.model.dgree}" id="dgree" disabled="false" converter="omnifaces.SelectItemsConverter">
+	  <f:selectItem itemLabel="" itemValue="#{null}"  />
+	  <f:selectItems value="#{mbAcademicDegree.modelList}" var="ref" itemLabel="#{ref.name}" itemValue="#{ref}"  />
+	</p:selectOneMenu>	
+
+	<p:outputLabel value="Nationality" for="nationality"/>	
+	<p:selectOneMenu value="#{mbEmployeeProfiles.model.nationality}" id="nationality" disabled="false" converter="omnifaces.SelectItemsConverter">
+	  <f:selectItem itemLabel="" itemValue="#{null}"  />
+	  <f:selectItems value="#{mbContries.modelList}" var="ref" itemLabel="#{ref.name}" itemValue="#{ref}"  />
+	</p:selectOneMenu>	
+
+	<p:outputLabel value="Address" for="address"/>	
+	<p:selectOneMenu value="#{mbEmployeeProfiles.model.address}" id="address" disabled="false" converter="omnifaces.SelectItemsConverter">
+	  <f:selectItem itemLabel="" itemValue="#{null}"  />
+	  <f:selectItems value="#{mbCities.modelList}" var="ref" itemLabel="#{ref.name}" itemValue="#{ref}"  />
+	</p:selectOneMenu>	
+		<f:facet name="footer">			
+		<div align="center">				
+		<p:commandButton value="Add" action="#{mbEmployeeProfiles.add}" rendered="#{mbEmployeeProfiles.allowAdd}"  process="@form" />
+		<p:commandButton value="Edit" action="#{mbEmployeeProfiles.edit}"  rendered="#{mbEmployeeProfiles.allowEdit}"  process="@this"/>
+		<ui:remove>
+		<p:commandButton value="Duplicate" action="#{mbGenerator.duplicate()}"  rendered="#{mbGenerator.allowEdit}"  process="@this"/>
+		</ui:remove>
+		<p:commandButton value="Save" action="#{mbEmployeeProfiles.save}" rendered="#{mbEmployeeProfiles.allowSave}"  process="@form" />
+		<p:commandButton value="Delete" action="#{mbEmployeeProfiles.delete}" rendered="#{mbEmployeeProfiles.allowDelete}"  process="@this"/>
+		<p:commandButton value="Reset" action="#{mbEmployeeProfiles.reset}" rendered="#{mbEmployeeProfiles.allowReset}"  process="@this"/>
+		<p:commandButton value="Fill" action="#{mbEmployeeProfiles.fill}" rendered="#{mbEmployeeProfiles.allowFill}"  process="@this"/>
+		<p:commandButton value="Cancel Edit" action="#{mbEmployeeProfiles.cancelEdit()}" rendered="#{mbEmployeeProfiles.editMode}"  process="@this"/>
+		</div>			
+		</f:facet>
+	
+	</p:panelGrid>		
+	</h:form>
+<hr/>
+	<h:form>
+		<p:dataTable 
+		value="#{mbEmployeeProfiles.modelList}" 
+		var="model" rowKey="#{model.id}"
+		paginator="true" 
+		paginatorAlwaysVisible="false" 
+		paginatorPosition="bottom" 
+		selectionMode="single" 
+		filteredValue="#{mbEmployeeProfiles.filterList}"
+		selection="#{mbEmployeeProfiles.model}"  
+		emptyMessage="" 
+		rowIndexVar="row"
+		styleClass="shaddow">
+		<p:ajax event="rowSelect"/>
+		<p:autoUpdate />
+		<f:facet name="header">EmployeeProfiles Data Table</f:facet>
+		<p:column headerText="#">#{row+1}</p:column>
+			  <p:column 
+			  	headerText="Number" 
+			  	sortBy="#{model.number}" 
+			  	filterBy="#{model.number}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.number==null?'-':model.number}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="First Name" 
+			  	sortBy="#{model.firstName}" 
+			  	filterBy="#{model.firstName}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.firstName==null?'-':model.firstName}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="Last Name" 
+			  	sortBy="#{model.lastName}" 
+			  	filterBy="#{model.lastName}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.lastName==null?'-':model.lastName}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="Email" 
+			  	sortBy="#{model.email}" 
+			  	filterBy="#{model.email}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.email==null?'-':model.email}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="Job Title" 
+			  	sortBy="#{model.jobTitle}" 
+			  	filterBy="#{model.jobTitle}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.jobTitle==null?'-':model.jobTitle}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="Dgree" 
+			  	sortBy="#{model.dgree}" 
+			  	filterBy="#{model.dgree}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.dgree==null?'-':model.dgree}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="Nationality" 
+			  	sortBy="#{model.nationality}" 
+			  	filterBy="#{model.nationality}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.nationality==null?'-':model.nationality}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="Address" 
+			  	sortBy="#{model.address}" 
+			  	filterBy="#{model.address}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.address==null?'-':model.address}"  />
+			  </p:column>		  
+	</p:dataTable>
+	</h:form>	</ui:define>
+</ui:composition>
+</html>

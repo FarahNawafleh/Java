@@ -1,0 +1,318 @@
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+????-??-?? ??:??:??,??? [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+????-??-?? ??:??:??,??? [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) ~[smart-cloud-standalone-4.0.5.jar:na]
+	at com.app.Main.main(Main.java:7) ~[classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:479) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:468) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:220) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+????-??-?? ??:??:??,??? [Thread-0] INFO  c.jk.web.embedded.JKWebApplication - Web server received a stop signal 
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+????-??-?? ??:??:??,??? [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+????-??-?? ??:??:??,??? [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) ~[smart-cloud-standalone-4.0.5.jar:na]
+	at com.app.Main.main(Main.java:7) ~[classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:479) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:468) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:220) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+????-??-?? ??:??:??,??? [localhost-startStop-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [208] milliseconds.
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+????-??-?? ??:??:??,??? [Thread-0] INFO  c.jk.web.embedded.JKWebApplication - Web server received a stop signal 
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+????-??-?? ??:??:??,??? [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+????-??-?? ??:??:??,??? [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) ~[smart-cloud-standalone-4.0.5.jar:na]
+	at com.app.Main.main(Main.java:7) ~[classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:479) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:468) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:220) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+????-??-?? ??:??:??,??? [localhost-startStop-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [220] milliseconds.
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+????-??-?? ??:??:??,??? [Thread-0] INFO  c.jk.web.embedded.JKWebApplication - Web server received a stop signal 
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+????-??-?? ??:??:??,??? [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+????-??-?? ??:??:??,??? [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) ~[smart-cloud-standalone-4.0.5.jar:na]
+	at com.app.Main.main(Main.java:7) ~[classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:479) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:468) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:220) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+????-??-?? ??:??:??,??? [Thread-0] INFO  c.jk.web.embedded.JKWebApplication - Web server received a stop signal 
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+????-??-?? ??:??:??,??? [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+????-??-?? ??:??:??,??? [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) ~[smart-cloud-standalone-4.0.5.jar:na]
+	at com.app.Main.main(Main.java:7) ~[classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:479) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:468) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:220) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+????-??-?? ??:??:??,??? [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+????-??-?? ??:??:??,??? [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) ~[smart-cloud-standalone-4.0.5.jar:na]
+	at com.app.Main.main(Main.java:7) ~[classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:479) ~[na:na]
+	at java.base/sun.nio.ch.Net.bind(Net.java:468) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:220) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:88) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+????-??-?? ??:??:??,??? [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+????-??-?? ??:??:??,??? [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+????-??-?? ??:??:??,??? [localhost-startStop-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [121] milliseconds.
+????-??-?? ??:??:??,??? [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+????-??-?? ??:??:??,??? [Thread-0] INFO  c.jk.web.embedded.JKWebApplication - Web server received a stop signal 
+2020-09-15 11:38:28,502 [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+2020-09-15 11:38:29,308 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-15 11:38:29,360 [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) [smart-cloud-standalone-4.0.5.jar:na]
+	at com.app.Main.main(Main.java:7) [classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_171]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+2020-09-15 11:38:29,365 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-15 11:38:29,366 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+2020-09-15 11:38:29,658 [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+2020-09-15 11:38:30,642 [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-15 11:38:31,001 [localhost-startStop-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [346] milliseconds.
+2020-09-15 11:38:31,026 [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+2020-09-15 11:50:38,518 [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+2020-09-15 11:50:39,044 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-15 11:50:39,068 [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) [smart-cloud-standalone-4.0.5.jar:na]
+	at com.app.Main.main(Main.java:7) [classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_171]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+2020-09-15 11:50:39,069 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-15 11:50:39,070 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+2020-09-15 11:50:40,126 [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+2020-09-15 11:51:07,829 [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-15 11:51:08,194 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.config - Initializing Mojarra 2.2.20 ( 20190731-0757 59754ac80c05d61848a08939ddd11a324f2345ac) for context ''
+2020-09-15 11:51:09,399 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.application - JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+2020-09-15 11:51:10,329 [localhost-startStop-1] INFO  c.j.w.f.e.JKFacesExceptionHandlerFactory - initialized 
+2020-09-15 11:51:12,293 [localhost-startStop-1] INFO  c.j.w.faces.renderers.JKPreRenderer - initialized 
+2020-09-15 11:51:12,451 [localhost-startStop-1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.13.Final
+2020-09-15 11:51:17,797 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Messages - initialized 
+2020-09-15 11:51:17,826 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Util - initialized 
+2020-09-15 11:51:17,872 [localhost-startStop-1] INFO  o.p.w.PostConstructApplicationEventListener - Running on PrimeFaces 8.0
+2020-09-15 11:51:17,873 [localhost-startStop-1] INFO  o.o.VersionLoggerEventListener - Using OmniFaces version 1.14.1
+2020-09-15 11:51:19,523 [localhost-startStop-1] INFO  com.jk.web.services.JKServiceConfig - RestServer initialized to packages com.jk.web.services
+2020-09-15 11:51:21,601 [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+2020-09-15 11:55:31,215 [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+2020-09-15 11:55:31,565 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-15 11:55:31,956 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-09-15 11:55:31,973 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-15 11:55:31,973 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+2020-09-15 11:55:32,255 [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+2020-09-15 11:55:43,181 [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-15 11:55:43,244 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.config - Initializing Mojarra 2.2.20 ( 20190731-0757 59754ac80c05d61848a08939ddd11a324f2345ac) for context ''
+2020-09-15 11:55:43,708 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.application - JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+2020-09-15 11:55:43,954 [localhost-startStop-1] INFO  c.j.w.f.e.JKFacesExceptionHandlerFactory - initialized 
+2020-09-15 11:55:44,214 [localhost-startStop-1] INFO  c.j.w.faces.renderers.JKPreRenderer - initialized 
+2020-09-15 11:55:44,276 [localhost-startStop-1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.13.Final
+2020-09-15 11:55:46,440 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Messages - initialized 
+2020-09-15 11:55:46,449 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Util - initialized 
+2020-09-15 11:55:46,490 [localhost-startStop-1] INFO  o.p.w.PostConstructApplicationEventListener - Running on PrimeFaces 8.0
+2020-09-15 11:55:46,491 [localhost-startStop-1] INFO  o.o.VersionLoggerEventListener - Using OmniFaces version 1.14.1
+2020-09-15 11:55:46,913 [localhost-startStop-1] INFO  com.jk.web.services.JKServiceConfig - RestServer initialized to packages com.jk.web.services
+2020-09-15 11:55:47,555 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-09-15 11:55:47,569 [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080

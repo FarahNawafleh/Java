@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:of="http://omnifaces.org/ui">
+<ui:composition template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="contents">	
+	<h:form id="frmSalary">
+	<p:autoUpdate />
+	<p:panelGrid columns="6" style="margin:auto;" styleClass="shaddow">
+		<f:facet name="header">Salary Form</f:facet>
+
+	<p:outputLabel value="Title" for="title"/>	
+	<p:inputText type="text" value="#{mbSalary.model.title}" id="title"  placeholder="Title" />
+
+	<p:outputLabel value="From" for="from"/>	
+	<p:inputText type="number" value="#{mbSalary.model.from}" id="from"  placeholder="From" />
+
+	<p:outputLabel value="To" for="to"/>	
+	<p:inputText type="number" value="#{mbSalary.model.to}" id="to"  placeholder="To" />
+		<f:facet name="footer">			
+		<div align="center">				
+		<p:commandButton value="Add" action="#{mbSalary.add}" rendered="#{mbSalary.allowAdd}"  process="@form" />
+		<p:commandButton value="Edit" action="#{mbSalary.edit}"  rendered="#{mbSalary.allowEdit}"  process="@this"/>
+		<ui:remove>
+		<p:commandButton value="Duplicate" action="#{mbGenerator.duplicate()}"  rendered="#{mbGenerator.allowEdit}"  process="@this"/>
+		</ui:remove>
+		<p:commandButton value="Save" action="#{mbSalary.save}" rendered="#{mbSalary.allowSave}"  process="@form" />
+		<p:commandButton value="Delete" action="#{mbSalary.delete}" rendered="#{mbSalary.allowDelete}"  process="@this"/>
+		<p:commandButton value="Reset" action="#{mbSalary.reset}" rendered="#{mbSalary.allowReset}"  process="@this"/>
+		<p:commandButton value="Fill" action="#{mbSalary.fill}" rendered="#{mbSalary.allowFill}"  process="@this"/>
+		<p:commandButton value="Cancel Edit" action="#{mbSalary.cancelEdit()}" rendered="#{mbSalary.editMode}"  process="@this"/>
+		</div>			
+		</f:facet>
+	
+	</p:panelGrid>		
+	</h:form>
+<hr/>
+	<h:form>
+		<p:dataTable 
+		value="#{mbSalary.modelList}" 
+		var="model" rowKey="#{model.id}"
+		paginator="true" 
+		paginatorAlwaysVisible="false" 
+		paginatorPosition="bottom" 
+		selectionMode="single" 
+		filteredValue="#{mbSalary.filterList}"
+		selection="#{mbSalary.model}"  
+		emptyMessage="" 
+		rowIndexVar="row"
+		styleClass="shaddow">
+		<p:ajax event="rowSelect"/>
+		<p:autoUpdate />
+		<f:facet name="header">Salary Data Table</f:facet>
+		<p:column headerText="#">#{row+1}</p:column>
+			  <p:column 
+			  	headerText="Title" 
+			  	sortBy="#{model.title}" 
+			  	filterBy="#{model.title}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.title==null?'-':model.title}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="From" 
+			  	sortBy="#{model.from}" 
+			  	filterBy="#{model.from}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.from==null?'-':model.from}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="To" 
+			  	sortBy="#{model.to}" 
+			  	filterBy="#{model.to}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.to==null?'-':model.to}"  />
+			  </p:column>		  
+	</p:dataTable>
+	</h:form>	</ui:define>
+</ui:composition>
+</html>

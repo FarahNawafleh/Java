@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<p:panel header="Employee Information">
+		<h:form>
+			<p:autoUpdate />
+			<p:growl />
+			<p:panelGrid columns="4" style="margin:auto">
+				<f:facet name="header">Employee Form</f:facet>
+
+				<p:outputLabel value="Id" for="empId"></p:outputLabel>
+				<p:inputText id="empId" value="#{mbEmployee.emp.id}" disables="true" />
+
+				<p:outputLabel value="Name" for="empName"></p:outputLabel>
+				<p:inputText id="empName" value="#{mbEmployee.emp.name}"
+					required="true" />
+
+				<p:outputLabel value="Salary" for="empSalary"></p:outputLabel>
+				<p:inputText id="empSalary" value="#{mbEmployee.emp.salary}"
+					required="true">
+					<f:validateDoubleRange minimum="100" maximum="1000" />
+				</p:inputText>
+
+				<p:outputLabel value="email" for="empEmail"></p:outputLabel>
+				<p:inputText id="empEmail" value="#{mbEmployee.emp.email}"
+					type="email" />
+
+				<f:facet name="footer">
+					<div align="center">
+						<p:commandButton value="Add Employee" action="#{mbEmployee.save()}" ajax="false" rendered="#{mbEmployee.emp.id == null}" />
+						<p:commandButton value="Update" action="#{mbEmployee.update()}" ajax="false" rendered="#{mbEmployee.emp.id != null}" process="@form" />
+						<p:commandButton value="Delete" action="#{mbEmployee.delete()}" rendered="#{mbEmployee.emp.id != null}" ajax="false" />
+						<p:commandButton value="Reset" action="#{mbEmployee.reset()}" ajax="false" rendered="#{mbEmployee.emp.id != null}" />
+					</div>
+				</f:facet>
+
+			</p:panelGrid>
+		</h:form>
+		<hr />
+		<h:form>
+			<p:dataTable value="#{mbEmployee.employees}" var="emp"
+				selectionMode="single" rowKey="#{emp.id}"
+				selection="#{mbEmployee.emp}">
+				<p:ajax event="rowSelect" />
+				<p:column headerText="ID">#{emp.id}</p:column>
+				<p:column headerText="Name">#{emp.name}</p:column>
+				<p:column headerText="Salary">#{emp.salary}</p:column>
+				<p:column headerText="E-mail">#{emp.email}</p:column>
+			</p:dataTable>
+		</h:form>
+
+
+	</p:panel>
+
+</h:body>
+</html>

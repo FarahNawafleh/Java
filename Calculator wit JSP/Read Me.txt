@@ -1,0 +1,4 @@
+calc1.jsp -> Simple Calculator with JSP, Send values in the url 
+calc2.jsp -> Simple Calculator with JSP - method get
+calc3.jsp -> Simple Calculator with JSP - method post
+login.jsp -> Simple login form if the password = 123456

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:c="http://xmlns.jcp.org/jsp/jstl/core" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition >
+ <h:form >
+ <p:autoUpdate/>
+<p:menubar rendered="#{not mbSecurity.userLoggedIn}">
+<p:menuitem value="Home" url="#{request.contextPath}/" icon="fa fa-home" />
+<p:menuitem value="Login" url="#{request.contextPath}/login/" icon="fa fa-key" />
+</p:menubar>
+<p:menubar rendered="#{mbSecurity.userLoggedIn}">
+<p:submenu label="Account" rendered="#{mbSecurity.userLoggedIn}">
+    <p:menuitem value="Change password" url="#{request.contextPath}/pages/user" />
+    <p:menuitem value="Logout" url="#{request.contextPath}/logout" />
+</p:submenu>
+<p:submenu label="Security" icon="fa jk-key" rendered="#{mbSecurity.admin}">
+    <p:menuitem value="Roles" url="#{request.contextPath}/admin/roles/" />
+    <p:menuitem value="Users" url="#{request.contextPath}/admin/users/" />
+</p:submenu>
+      <p:submenu label="General Config" icon="fa jk-icon" rendered="#{mbSecurity.userLoggedIn}">
+        <p:menuitem value="Contries" url="#{request.contextPath}/pages/general-config/contries" />
+        <p:menuitem value="Cities" url="#{request.contextPath}/pages/general-config/cities" />
+      </p:submenu>
+      <p:submenu label="HR Config" icon="fa jk-icon" rendered="#{mbSecurity.userLoggedIn}">
+        <p:menuitem value="Job Title" url="#{request.contextPath}/pages/hr-config/job-title" />
+        <p:menuitem value="Academic Degree" url="#{request.contextPath}/pages/hr-config/academic-degree" />
+        <p:menuitem value="Salary" url="#{request.contextPath}/pages/hr-config/salary" />
+      </p:submenu>
+      <p:submenu label="Employee Mgmt" icon="fa jk-icon" rendered="#{mbSecurity.userLoggedIn}">
+        <p:menuitem value="Employee Profiles" url="#{request.contextPath}/pages/employee-mgmt/employee-profiles" />
+      </p:submenu>
+      <p:submenu label="Reports" icon="fa jk-icon" rendered="#{mbSecurity.userLoggedIn}">
+        <p:menuitem value="General Reports" url="#{request.contextPath}/pages/reports/general-reports" />
+        <p:menuitem value="Employee Reports" url="#{request.contextPath}/pages/reports/employee-reports" />
+      </p:submenu>
+    </p:menubar>
+ </h:form>
+</ui:composition>
+</html>

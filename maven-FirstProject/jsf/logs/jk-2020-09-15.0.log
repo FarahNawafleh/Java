@@ -1,0 +1,175 @@
+2020-09-15 22:37:35,278 [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+2020-09-15 22:37:35,993 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-15 22:37:36,046 [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) [smart-cloud-standalone-4.0.3.jar:na]
+	at com.app.Main.main(Main.java:7) [classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_171]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+2020-09-15 22:37:36,048 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-15 22:37:36,048 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+2020-09-15 22:37:36,503 [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+2020-09-15 22:37:47,971 [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-15 22:37:48,056 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.config - Initializing Mojarra 2.2.20 ( 20190731-0757 59754ac80c05d61848a08939ddd11a324f2345ac) for context ''
+2020-09-15 22:37:48,489 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.application - JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+2020-09-15 22:37:48,768 [localhost-startStop-1] INFO  c.j.w.f.e.JKFacesExceptionHandlerFactory - initialized 
+2020-09-15 22:37:49,347 [localhost-startStop-1] INFO  c.j.w.faces.renderers.JKPreRenderer - initialized 
+2020-09-15 22:37:49,425 [localhost-startStop-1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.13.Final
+2020-09-15 22:37:50,854 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Messages - initialized 
+2020-09-15 22:37:50,910 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Util - initialized 
+2020-09-15 22:37:50,971 [localhost-startStop-1] INFO  o.p.w.PostConstructApplicationEventListener - Running on PrimeFaces 8.0
+2020-09-15 22:37:50,973 [localhost-startStop-1] INFO  o.o.VersionLoggerEventListener - Using OmniFaces version 1.14.1
+2020-09-15 22:37:51,451 [localhost-startStop-1] INFO  com.jk.web.services.JKServiceConfig - RestServer initialized to packages com.jk.web.services
+2020-09-15 22:37:52,110 [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+2020-09-15 22:40:23,928 [Thread-1] INFO  c.jk.web.embedded.JKWebApplication - Web server received a stop signal 
+2020-09-15 22:40:25,076 [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+2020-09-15 22:40:25,385 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-15 22:40:25,404 [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) [smart-cloud-standalone-4.0.3.jar:na]
+	at com.app.Main.main(Main.java:7) [classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_171]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+2020-09-15 22:40:25,404 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-15 22:40:25,405 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+2020-09-15 22:40:25,647 [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+2020-09-15 22:40:35,806 [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-15 22:40:35,867 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.config - Initializing Mojarra 2.2.20 ( 20190731-0757 59754ac80c05d61848a08939ddd11a324f2345ac) for context ''
+2020-09-15 22:40:36,341 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.application - JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+2020-09-15 22:40:36,600 [localhost-startStop-1] INFO  c.j.w.f.e.JKFacesExceptionHandlerFactory - initialized 
+2020-09-15 22:40:37,222 [localhost-startStop-1] INFO  c.j.w.faces.renderers.JKPreRenderer - initialized 
+2020-09-15 22:40:37,315 [localhost-startStop-1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.13.Final
+2020-09-15 22:40:39,427 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Util - initialized 
+2020-09-15 22:40:39,431 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Messages - initialized 
+2020-09-15 22:40:39,453 [localhost-startStop-1] INFO  o.p.w.PostConstructApplicationEventListener - Running on PrimeFaces 8.0
+2020-09-15 22:40:39,454 [localhost-startStop-1] INFO  o.o.VersionLoggerEventListener - Using OmniFaces version 1.14.1
+2020-09-15 22:40:39,801 [localhost-startStop-1] INFO  com.jk.web.services.JKServiceConfig - RestServer initialized to packages com.jk.web.services
+2020-09-15 22:40:40,436 [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+2020-09-15 22:41:45,973 [Thread-1] INFO  c.jk.web.embedded.JKWebApplication - Web server received a stop signal 
+2020-09-15 22:41:47,122 [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+2020-09-15 22:41:47,532 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-15 22:41:47,562 [main] ERROR  o.a.catalina.core.StandardService - Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:112) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:852) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:140) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:427) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	at com.jk.web.embedded.JKWebApplication.run(JKWebApplication.java:126) [smart-cloud-standalone-4.0.5.jar:na]
+	at com.app.Main.main(Main.java:7) [classes/:na]
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:995) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:107) [tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 8 common frames omitted
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_171]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_171]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_171]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:219) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:224) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:581) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:68) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:993) ~[tomcat-embed-core-8.5.43.jar:8.5.43]
+	... 9 common frames omitted
+2020-09-15 22:41:47,564 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-15 22:41:47,564 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+2020-09-15 22:41:47,865 [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+2020-09-15 22:41:59,760 [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-15 22:41:59,820 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.config - Initializing Mojarra 2.2.20 ( 20190731-0757 59754ac80c05d61848a08939ddd11a324f2345ac) for context ''
+2020-09-15 22:42:00,179 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.application - JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+2020-09-15 22:42:00,381 [localhost-startStop-1] INFO  c.j.w.f.e.JKFacesExceptionHandlerFactory - initialized 
+2020-09-15 22:42:00,908 [localhost-startStop-1] INFO  c.j.w.faces.renderers.JKPreRenderer - initialized 
+2020-09-15 22:42:00,965 [localhost-startStop-1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.13.Final
+2020-09-15 22:42:03,565 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Util - initialized 
+2020-09-15 22:42:03,569 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Messages - initialized 
+2020-09-15 22:42:03,591 [localhost-startStop-1] INFO  o.p.w.PostConstructApplicationEventListener - Running on PrimeFaces 8.0
+2020-09-15 22:42:03,591 [localhost-startStop-1] INFO  o.o.VersionLoggerEventListener - Using OmniFaces version 1.14.1
+2020-09-15 22:42:03,914 [localhost-startStop-1] INFO  com.jk.web.services.JKServiceConfig - RestServer initialized to packages com.jk.web.services
+2020-09-15 22:42:04,579 [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+2020-09-15 23:17:35,738 [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+2020-09-15 23:17:36,049 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-15 23:17:36,429 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-09-15 23:17:36,442 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-15 23:17:36,443 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+2020-09-15 23:17:36,678 [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+2020-09-15 23:17:46,384 [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-15 23:17:46,452 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.config - Initializing Mojarra 2.2.20 ( 20190731-0757 59754ac80c05d61848a08939ddd11a324f2345ac) for context ''
+2020-09-15 23:17:46,788 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.application - JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+2020-09-15 23:17:47,032 [localhost-startStop-1] INFO  c.j.w.f.e.JKFacesExceptionHandlerFactory - initialized 
+2020-09-15 23:17:47,253 [localhost-startStop-1] INFO  c.j.w.faces.renderers.JKPreRenderer - initialized 
+2020-09-15 23:17:47,306 [localhost-startStop-1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.13.Final
+2020-09-15 23:17:48,608 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Messages - initialized 
+2020-09-15 23:17:48,617 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Util - initialized 
+2020-09-15 23:17:48,650 [localhost-startStop-1] INFO  o.p.w.PostConstructApplicationEventListener - Running on PrimeFaces 8.0
+2020-09-15 23:17:48,651 [localhost-startStop-1] INFO  o.o.VersionLoggerEventListener - Using OmniFaces version 1.14.1
+2020-09-15 23:17:48,987 [localhost-startStop-1] INFO  com.jk.web.services.JKServiceConfig - RestServer initialized to packages com.jk.web.services
+2020-09-15 23:17:49,509 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-09-15 23:17:49,520 [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080
+2020-09-15 23:54:00,696 [main] INFO  c.jk.web.embedded.JKWebApplication - Starting web-server at port 8080....
+2020-09-15 23:54:02,184 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-09-15 23:54:02,675 [main] INFO  o.a.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2020-09-15 23:54:02,690 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-15 23:54:02,691 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.43
+2020-09-15 23:54:03,018 [localhost-startStop-1] INFO  o.a.catalina.startup.ContextConfig - No global web.xml found
+2020-09-15 23:54:28,304 [localhost-startStop-1] INFO  o.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-09-15 23:54:28,476 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.config - Initializing Mojarra 2.2.20 ( 20190731-0757 59754ac80c05d61848a08939ddd11a324f2345ac) for context ''
+2020-09-15 23:54:28,909 [localhost-startStop-1] INFO  j.e.r.webcontainer.jsf.application - JSF1048: PostConstruct/PreDestroy annotations present.  ManagedBeans methods marked with these annotations will have said annotations processed.
+2020-09-15 23:54:29,218 [localhost-startStop-1] INFO  c.j.w.f.e.JKFacesExceptionHandlerFactory - initialized 
+2020-09-15 23:54:29,655 [localhost-startStop-1] INFO  c.j.w.faces.renderers.JKPreRenderer - initialized 
+2020-09-15 23:54:29,794 [localhost-startStop-1] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.13.Final
+2020-09-15 23:54:31,921 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Messages - initialized 
+2020-09-15 23:54:31,960 [localhost-startStop-1] INFO  com.jk.web.faces.mb.MB_Util - initialized 
+2020-09-15 23:54:31,997 [localhost-startStop-1] INFO  o.p.w.PostConstructApplicationEventListener - Running on PrimeFaces 8.0
+2020-09-15 23:54:31,998 [localhost-startStop-1] INFO  o.o.VersionLoggerEventListener - Using OmniFaces version 1.14.1
+2020-09-15 23:54:32,499 [localhost-startStop-1] INFO  com.jk.web.services.JKServiceConfig - RestServer initialized to packages com.jk.web.services
+2020-09-15 23:54:33,571 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-09-15 23:54:33,623 [main] INFO  c.jk.web.embedded.JKWebApplication - Web server started at URL :  http://localhost:8080

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:of="http://omnifaces.org/ui">
+<ui:composition template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="contents">	
+	<h:form id="frmJobTitle">
+	<p:autoUpdate />
+	<p:panelGrid columns="2" style="margin:auto;" styleClass="shaddow">
+		<f:facet name="header">Job Title Form</f:facet>
+
+	<p:outputLabel value="Name" for="name"/>	
+	<p:inputText type="text" value="#{mbJobTitle.model.name}" id="name"  placeholder="Name" />
+		<f:facet name="footer">			
+		<div align="center">				
+		<p:commandButton value="Add" action="#{mbJobTitle.add}" rendered="#{mbJobTitle.allowAdd}"  process="@form" />
+		<p:commandButton value="Edit" action="#{mbJobTitle.edit}"  rendered="#{mbJobTitle.allowEdit}"  process="@this"/>
+		<ui:remove>
+		<p:commandButton value="Duplicate" action="#{mbGenerator.duplicate()}"  rendered="#{mbGenerator.allowEdit}"  process="@this"/>
+		</ui:remove>
+		<p:commandButton value="Save" action="#{mbJobTitle.save}" rendered="#{mbJobTitle.allowSave}"  process="@form" />
+		<p:commandButton value="Delete" action="#{mbJobTitle.delete}" rendered="#{mbJobTitle.allowDelete}"  process="@this"/>
+		<p:commandButton value="Reset" action="#{mbJobTitle.reset}" rendered="#{mbJobTitle.allowReset}"  process="@this"/>
+		<p:commandButton value="Fill" action="#{mbJobTitle.fill}" rendered="#{mbJobTitle.allowFill}"  process="@this"/>
+		<p:commandButton value="Cancel Edit" action="#{mbJobTitle.cancelEdit()}" rendered="#{mbJobTitle.editMode}"  process="@this"/>
+		</div>			
+		</f:facet>
+	
+	</p:panelGrid>		
+	</h:form>
+<hr/>
+	<h:form>
+		<p:dataTable 
+		value="#{mbJobTitle.modelList}" 
+		var="model" rowKey="#{model.id}"
+		paginator="true" 
+		paginatorAlwaysVisible="false" 
+		paginatorPosition="bottom" 
+		selectionMode="single" 
+		filteredValue="#{mbJobTitle.filterList}"
+		selection="#{mbJobTitle.model}"  
+		emptyMessage="" 
+		rowIndexVar="row"
+		styleClass="shaddow">
+		<p:ajax event="rowSelect"/>
+		<p:autoUpdate />
+		<f:facet name="header">JobTitle Data Table</f:facet>
+		<p:column headerText="#">#{row+1}</p:column>
+			  <p:column 
+			  	headerText="Name" 
+			  	sortBy="#{model.name}" 
+			  	filterBy="#{model.name}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.name==null?'-':model.name}"  />
+			  </p:column>		  
+	</p:dataTable>
+	</h:form>	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:of="http://omnifaces.org/ui">
+<ui:composition template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="contents">	
+	<h:form id="frmCities">
+	<p:autoUpdate />
+	<p:panelGrid columns="4" style="margin:auto;" styleClass="shaddow">
+		<f:facet name="header">Cities Form</f:facet>
+
+	<p:outputLabel value="Name" for="name"/>	
+	<p:inputText type="text" value="#{mbCities.model.name}" id="name"  placeholder="Name" />
+
+	<p:outputLabel value="Country" for="country"/>	
+	<p:selectOneMenu value="#{mbCities.model.country}" id="country" disabled="false" converter="omnifaces.SelectItemsConverter">
+	  <f:selectItem itemLabel="" itemValue="#{null}"  />
+	  <f:selectItems value="#{mbContries.modelList}" var="ref" itemLabel="#{ref.name}" itemValue="#{ref}"  />
+	</p:selectOneMenu>	
+		<f:facet name="footer">			
+		<div align="center">				
+		<p:commandButton value="Add" action="#{mbCities.add}" rendered="#{mbCities.allowAdd}"  process="@form" />
+		<p:commandButton value="Edit" action="#{mbCities.edit}"  rendered="#{mbCities.allowEdit}"  process="@this"/>
+		<ui:remove>
+		<p:commandButton value="Duplicate" action="#{mbGenerator.duplicate()}"  rendered="#{mbGenerator.allowEdit}"  process="@this"/>
+		</ui:remove>
+		<p:commandButton value="Save" action="#{mbCities.save}" rendered="#{mbCities.allowSave}"  process="@form" />
+		<p:commandButton value="Delete" action="#{mbCities.delete}" rendered="#{mbCities.allowDelete}"  process="@this"/>
+		<p:commandButton value="Reset" action="#{mbCities.reset}" rendered="#{mbCities.allowReset}"  process="@this"/>
+		<p:commandButton value="Fill" action="#{mbCities.fill}" rendered="#{mbCities.allowFill}"  process="@this"/>
+		<p:commandButton value="Cancel Edit" action="#{mbCities.cancelEdit()}" rendered="#{mbCities.editMode}"  process="@this"/>
+		</div>			
+		</f:facet>
+	
+	</p:panelGrid>		
+	</h:form>
+<hr/>
+	<h:form>
+		<p:dataTable 
+		value="#{mbCities.modelList}" 
+		var="model" rowKey="#{model.id}"
+		paginator="true" 
+		paginatorAlwaysVisible="false" 
+		paginatorPosition="bottom" 
+		selectionMode="single" 
+		filteredValue="#{mbCities.filterList}"
+		selection="#{mbCities.model}"  
+		emptyMessage="" 
+		rowIndexVar="row"
+		styleClass="shaddow">
+		<p:ajax event="rowSelect"/>
+		<p:autoUpdate />
+		<f:facet name="header">Cities Data Table</f:facet>
+		<p:column headerText="#">#{row+1}</p:column>
+			  <p:column 
+			  	headerText="Name" 
+			  	sortBy="#{model.name}" 
+			  	filterBy="#{model.name}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.name==null?'-':model.name}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="Country" 
+			  	sortBy="#{model.country}" 
+			  	filterBy="#{model.country}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.country==null?'-':model.country}"  />
+			  </p:column>		  
+	</p:dataTable>
+	</h:form>	</ui:define>
+</ui:composition>
+</html>

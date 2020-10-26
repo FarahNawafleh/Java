@@ -1,0 +1,19 @@
+label{
+	color: #5f0f40;
+	margin: 5px;
+	padding: 5px;
+}
+input, select{
+		margin: 5px;
+	padding: 5px;
+	background-color: #ffcad4;
+}
+h3{
+	color:#5f0f40;
+}
+h2, h1 {
+	backgeoung-color : #f4acb7;
+		margin: 5px;
+	padding: 5px;
+	color: #5f0f40;
+}

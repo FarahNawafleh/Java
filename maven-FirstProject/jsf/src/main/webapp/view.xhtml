@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:jk="http://jalalkiswani.com/jsf">
+<h:head>
+	<title>Hello</title>
+	<link rel="stylesheet" href="css/style.css" />
+</h:head>
+<h:body>
+	<h:form>
+<label>Result</label>
+
+<br></br>
+<label> Number 1</label>
+<h:inputText value="#{mbCalc.number1}"/>
+<label> Number 2</label>
+<h:inputText value="#{mbCalc.number2}"/>
+<br></br>
+<h:commandButton value="Add" action="#{mbCalc.add()}"/>
+<br></br>
+<h:commandButton value="Sub" action="#{mbCalc.sub()}"></h:commandButton>
+<br></br>
+<h:commandButton value="Multiply" action="#{mbCalc.mul()}"></h:commandButton>
+<br></br>
+<h:commandButton value="Divide" action="#{mbCalc.divi()}"></h:commandButton>
+<br></br>
+<h:outputText value="#{mbCalc.result}"/>
+	</h:form>
+</h:body>
+</html>

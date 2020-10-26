@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:of="http://omnifaces.org/ui">
+<ui:composition template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="contents">	
+	<h:form id="frmEmployeeReports">
+	<p:autoUpdate />
+	<p:panelGrid columns="2" style="margin:auto;" styleClass="shaddow">
+		<f:facet name="header">Employee Reports Form</f:facet>
+		<f:facet name="footer">			
+		<div align="center">				
+		<p:commandButton value="Add" action="#{mbEmployeeReports.add}" rendered="#{mbEmployeeReports.allowAdd}"  process="@form" />
+		<p:commandButton value="Edit" action="#{mbEmployeeReports.edit}"  rendered="#{mbEmployeeReports.allowEdit}"  process="@this"/>
+		<ui:remove>
+		<p:commandButton value="Duplicate" action="#{mbGenerator.duplicate()}"  rendered="#{mbGenerator.allowEdit}"  process="@this"/>
+		</ui:remove>
+		<p:commandButton value="Save" action="#{mbEmployeeReports.save}" rendered="#{mbEmployeeReports.allowSave}"  process="@form" />
+		<p:commandButton value="Delete" action="#{mbEmployeeReports.delete}" rendered="#{mbEmployeeReports.allowDelete}"  process="@this"/>
+		<p:commandButton value="Reset" action="#{mbEmployeeReports.reset}" rendered="#{mbEmployeeReports.allowReset}"  process="@this"/>
+		<p:commandButton value="Fill" action="#{mbEmployeeReports.fill}" rendered="#{mbEmployeeReports.allowFill}"  process="@this"/>
+		<p:commandButton value="Cancel Edit" action="#{mbEmployeeReports.cancelEdit()}" rendered="#{mbEmployeeReports.editMode}"  process="@this"/>
+		</div>			
+		</f:facet>
+	
+	</p:panelGrid>		
+	</h:form>
+<hr/>
+	<h:form>
+		<p:dataTable 
+		value="#{mbEmployeeReports.modelList}" 
+		var="model" rowKey="#{model.id}"
+		paginator="true" 
+		paginatorAlwaysVisible="false" 
+		paginatorPosition="bottom" 
+		selectionMode="single" 
+		filteredValue="#{mbEmployeeReports.filterList}"
+		selection="#{mbEmployeeReports.model}"  
+		emptyMessage="" 
+		rowIndexVar="row"
+		styleClass="shaddow">
+		<p:ajax event="rowSelect"/>
+		<p:autoUpdate />
+		<f:facet name="header">EmployeeReports Data Table</f:facet>
+		<p:column headerText="#">#{row+1}</p:column>
+	</p:dataTable>
+	</h:form>	</ui:define>
+</ui:composition>
+</html>

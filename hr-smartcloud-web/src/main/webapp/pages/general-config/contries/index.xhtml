@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:jk="http://jalalkiswani.com/jsf"
+	xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:of="http://omnifaces.org/ui">
+<ui:composition template="/WEB-INF/templates/default.xhtml">
+	<ui:define name="contents">	
+	<h:form id="frmContries">
+	<p:autoUpdate />
+	<p:panelGrid columns="4" style="margin:auto;" styleClass="shaddow">
+		<f:facet name="header">Contries Form</f:facet>
+
+	<p:outputLabel value="Short Name" for="shortName"/>	
+	<p:inputText type="text" value="#{mbContries.model.shortName}" id="shortName"  placeholder="ShortName" />
+
+	<p:outputLabel value="Name" for="name"/>	
+	<p:inputText type="text" value="#{mbContries.model.name}" id="name"  placeholder="Name" />
+		<f:facet name="footer">			
+		<div align="center">				
+		<p:commandButton value="Add" action="#{mbContries.add}" rendered="#{mbContries.allowAdd}"  process="@form" />
+		<p:commandButton value="Edit" action="#{mbContries.edit}"  rendered="#{mbContries.allowEdit}"  process="@this"/>
+		<ui:remove>
+		<p:commandButton value="Duplicate" action="#{mbGenerator.duplicate()}"  rendered="#{mbGenerator.allowEdit}"  process="@this"/>
+		</ui:remove>
+		<p:commandButton value="Save" action="#{mbContries.save}" rendered="#{mbContries.allowSave}"  process="@form" />
+		<p:commandButton value="Delete" action="#{mbContries.delete}" rendered="#{mbContries.allowDelete}"  process="@this"/>
+		<p:commandButton value="Reset" action="#{mbContries.reset}" rendered="#{mbContries.allowReset}"  process="@this"/>
+		<p:commandButton value="Fill" action="#{mbContries.fill}" rendered="#{mbContries.allowFill}"  process="@this"/>
+		<p:commandButton value="Cancel Edit" action="#{mbContries.cancelEdit()}" rendered="#{mbContries.editMode}"  process="@this"/>
+		</div>			
+		</f:facet>
+	
+	</p:panelGrid>		
+	</h:form>
+<hr/>
+	<h:form>
+		<p:dataTable 
+		value="#{mbContries.modelList}" 
+		var="model" rowKey="#{model.id}"
+		paginator="true" 
+		paginatorAlwaysVisible="false" 
+		paginatorPosition="bottom" 
+		selectionMode="single" 
+		filteredValue="#{mbContries.filterList}"
+		selection="#{mbContries.model}"  
+		emptyMessage="" 
+		rowIndexVar="row"
+		styleClass="shaddow">
+		<p:ajax event="rowSelect"/>
+		<p:autoUpdate />
+		<f:facet name="header">Contries Data Table</f:facet>
+		<p:column headerText="#">#{row+1}</p:column>
+			  <p:column 
+			  	headerText="Short Name" 
+			  	sortBy="#{model.shortName}" 
+			  	filterBy="#{model.shortName}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.shortName==null?'-':model.shortName}"  />
+			  </p:column>		  
+			  <p:column 
+			  	headerText="Name" 
+			  	sortBy="#{model.name}" 
+			  	filterBy="#{model.name}" 
+			  	filterMatchMode="contains">
+			  <h:outputText value="#{model.name==null?'-':model.name}"  />
+			  </p:column>		  
+	</p:dataTable>
+	</h:form>	</ui:define>
+</ui:composition>
+</html>
